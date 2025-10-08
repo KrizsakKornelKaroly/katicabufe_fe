@@ -21,13 +21,13 @@
     <tbody class="table-group-divider">
         <tr *ngFor="let row of traffic; index as i;">
             <td>{{i+1}}.</td>
-            <td>{{row.kategoriaId}}</td>
+            <td>{{row.kategoriaNev}}</td>
             <td>{{row.termek}}</td>
             <td>{{row.vevo}}</td>
             <td>{{row.mennyiseg}} {{row.egyseg}}</td>
             <td>{{row.nettoar}} Ft</td>
             <td>{{row.mennyiseg * row.nettoar}} Ft</td>
-            <td>{{row.kiadva}}</td>
+            <td>{{row.kiadva ? 'Kiadva' : 'Folyamatban'}}</td>
             <td class="text-end">
                 <button class="btn btn-sm btn-warning me-2">
                     <i class="bi bi-exclamation-circle-fill"></i>
