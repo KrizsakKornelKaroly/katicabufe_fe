@@ -2,17 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import axios from 'axios';
-
-interface Traffic {
-  id: number;
-  termek: string;
-  vevo: string;
-  kategoriaNev: string;
-  egyseg : string;
-  nettoar: number;
-  mennyiseg : number;
-  kiadva : boolean;
-}
+import { Traffic } from '../../../interfaces/traffic';
 
 @Component({
   selector: 'app-trafficList',
