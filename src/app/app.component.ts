@@ -4,7 +4,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { StatComponent } from './components/stat/stat.component';
-import { TrafficListComponent } from './components/traffic/list/list.component';
 
 @Component({
   selector: 'app-root',
@@ -20,5 +19,7 @@ import { TrafficListComponent } from './components/traffic/list/list.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'Katicabufe';
+  appTitle = 'Katica Büfé App';
+  company = "Bajai SZC Türr István Technikum";
+  author = "13.A szoftverfejlesztő";
 }

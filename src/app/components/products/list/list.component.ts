@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-trafficForm',
+  selector: 'app-productsList',
   standalone: true,
   imports: [RouterModule],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  templateUrl: './list.component.html',
+  styleUrl: './list.component.scss'
 })
-export class TrafficFormComponent {
+export class ProductsListComponent {
 
 }

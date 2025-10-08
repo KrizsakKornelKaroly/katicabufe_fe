@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-categoryForm',
+  selector: 'app-productsForm',
   standalone: true,
   imports: [RouterModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
-export class CategoryFormComponent {
+export class ProductsFormComponent {
 
 }

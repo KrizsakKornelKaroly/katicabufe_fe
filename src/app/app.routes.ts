@@ -3,11 +3,20 @@ import { CategoryListComponent } from './components/categories/list/list.compone
 import { TrafficListComponent } from './components/traffic/list/list.component';
 import { TrafficFormComponent } from './components/traffic/form/form.component';
 import { CategoryFormComponent } from './components/categories/form/form.component';
+import { ProductsListComponent } from './components/products/list/list.component';
+import { ProductsFormComponent } from './components/products/form/form.component';
+import { CustomersListComponent } from './components/customers/list/list.component';
+import { CustomersFormComponent } from './components/customers/form/form.component';
+import { PricelistListComponent } from './components/pricelist/list/list.component';
 
 export const routes: Routes = [
     {
         path: 'categories',
         component: CategoryListComponent
+    },
+    {
+        path: 'categoryform',
+        component: CategoryFormComponent
     },
     {
         path: 'traffic',
@@ -18,8 +27,24 @@ export const routes: Routes = [
         component: TrafficFormComponent
     },
     {
-        path: 'categoryform',
-        component: CategoryFormComponent
+        path: 'products',
+        component: ProductsListComponent
+    },
+    {
+        path: 'productsform',
+        component: ProductsFormComponent
+    },
+    {
+        path: 'customers',
+        component: CustomersListComponent
+    },
+    {
+        path: 'customersform',
+        component: CustomersFormComponent
+    },
+    {
+        path: 'pricelist',
+        component: PricelistListComponent
     }
        
 ];
