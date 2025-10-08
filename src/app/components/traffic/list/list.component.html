@@ -15,10 +15,28 @@
             <th class="text-end">Nettó ár</th>
             <th class="text-end">Összesen</th>
             <th>Kiadva</th>
+            <th>Műveletek</th>
         </tr>
     </thead>
-    <tbody>
-
+    <tbody class="table-group-divider">
+        <tr *ngFor="let row of traffic; index as i;">
+            <td>{{i+1}}.</td>
+            <td>{{row.kategoriaId}}</td>
+            <td>{{row.termek}}</td>
+            <td>{{row.vevo}}</td>
+            <td>{{row.mennyiseg}} {{row.egyseg}}</td>
+            <td>{{row.nettoar}} Ft</td>
+            <td>{{row.mennyiseg * row.nettoar}} Ft</td>
+            <td>{{row.kiadva}}</td>
+            <td class="text-end">
+                <button class="btn btn-sm btn-warning me-2">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                </button>
+                <button class="btn btn-sm btn-danger">
+                    <i class="bi bi-x-circle-fill"></i>
+                </button>
+            </td>
+        </tr>
     </tbody>
     <tfoot>
         <th colspan="8" class="text-center">Összesen: <span>0</span> rekord</th>
