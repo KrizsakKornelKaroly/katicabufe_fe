@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Traffic } from '../../../interfaces/traffic';
 import { ApiService } from '../../../services/api.service';
+import { ApiResponse } from '../../../interfaces/apires';
 
 @Component({
   selector: 'app-trafficList',
@@ -18,8 +19,13 @@ export class TrafficListComponent {
   traffic: Traffic[] = [];
 
    async ngOnInit() {
-    this.api.selectAll('traffic').then(res => {
-      this.traffic = res;
+    this.api.selectAll('traffic').then((res: ApiResponse) => {
+      if(res.status === 200 ) {
+        this.traffic = res.data;
+      }
+      else {
+        alert(res.message);
+      }
     });
   }
 

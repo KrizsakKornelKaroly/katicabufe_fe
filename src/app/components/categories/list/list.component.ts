@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import axios from 'axios';
 import { Category } from '../../../interfaces/category';
 import { ApiService } from '../../../services/api.service';
+import { ApiResponse } from '../../../interfaces/apires';
 
 @Component({
   selector: 'app-categoryList',
@@ -20,9 +21,14 @@ constructor(private api : ApiService) { }
   categories: Category[] = [];
 
   async ngOnInit() {
-    this.api.selectAll('categories').then(res => {
-      this.categories = res;
-    });
+    this.api.selectAll('categories').then((res: ApiResponse) => {
+          if(res.status === 200 ) {
+            this.categories = res.data;
+          }
+          else {
+            alert(res.message);
+          }
+        });
   }
 
 }
