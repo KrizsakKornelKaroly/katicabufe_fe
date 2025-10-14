@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import axios from 'axios';
 import { Traffic } from '../../../interfaces/traffic';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-trafficList',
@@ -13,19 +13,14 @@ import { Traffic } from '../../../interfaces/traffic';
 })
 export class TrafficListComponent {
 
+  constructor(private api : ApiService) { }
+
   traffic: Traffic[] = [];
 
-  async ngOnInit() {
-    try {
-      const response = await axios.get('http://localhost:3000/traffic');
-      this.traffic = response.data;
-      console.log(this.traffic);
-
-    } catch (error: any ) {
-      console.log(error.message);
-      alert('Hiba a kategóriák betöltése során');
-    }
-
+   async ngOnInit() {
+    this.api.selectAll('traffic').then(res => {
+      this.traffic = res;
+    });
   }
 
 }

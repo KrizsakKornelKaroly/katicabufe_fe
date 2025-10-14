@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import axios from 'axios';
 import { Category } from '../../../interfaces/category';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-categoryList',
@@ -14,17 +15,14 @@ import { Category } from '../../../interfaces/category';
 
 export class CategoryListComponent implements OnInit {
 
+constructor(private api : ApiService) { }
+
   categories: Category[] = [];
 
   async ngOnInit() {
-    try {
-      const response = await axios.get('http://localhost:3000/categories');
-      this.categories = response.data;
-
-    } catch (error: any ) {
-      console.log(error.message);
-      alert('Hiba a kategóriák betöltése során');
-    }
-
+    this.api.selectAll('categories').then(res => {
+      this.categories = res;
+    });
   }
+
 }
