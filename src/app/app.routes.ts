@@ -22,6 +22,8 @@ export const routes: Routes = [
         path: 'categoryform/:id',
         component: CategoryFormComponent
     },
+
+
     {
         path: 'traffic',
         component: TrafficListComponent
@@ -31,6 +33,12 @@ export const routes: Routes = [
         component: TrafficFormComponent
     },
     {
+        path: 'trafficform/:id',
+        component: TrafficFormComponent
+    },
+
+
+    {
         path: 'products',
         component: ProductsListComponent
     },
@@ -38,6 +46,8 @@ export const routes: Routes = [
         path: 'productsform',
         component: ProductsFormComponent
     },
+
+
     {
         path: 'customers',
         component: CustomersListComponent
@@ -46,6 +56,8 @@ export const routes: Routes = [
         path: 'customersform',
         component: CustomersFormComponent
     },
+
+    
     {
         path: 'pricelist',
         component: PricelistListComponent

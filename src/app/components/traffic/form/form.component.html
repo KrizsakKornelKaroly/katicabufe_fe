@@ -1,38 +1,43 @@
 <h3>Forgalom kezelés</h3>
 <hr>
-<h5>Új forgalom felvétele</h5>
+
+<h5 *ngIf="!this.id">Új forgalom felvétele</h5>
+<h5 *ngIf="this.id">Forgalom módosítása</h5>
 
 <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="catname" placeholder="">
-    <label for="catname">Kategória név</label>
+    <input type="text" class="form-control" id="catname" placeholder="" [(ngModel)]="newTraffic.kategoriaId">
+    <label for="catname" >Kategória ID</label>
 </div>
 <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="termekname" placeholder="">
-    <label for="termekname">Termék név</label>
+    <input type="text" class="form-control" id="termekname" placeholder="" [(ngModel)]="newTraffic.termek">
+    <label for="termekname" >Termék név</label>
 </div>
 <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="vevoname" placeholder="">
+    <input type="text" class="form-control" id="vevoname" placeholder="" [(ngModel)]="newTraffic.vevo">
     <label for="vevoname">Vevő név</label>
 </div>
  
+<div class="row">
+    <div class="form-floating mb-3 col-8">
+        <input type="text" class="form-control" id="mennyisegname" placeholder="" [(ngModel)]="newTraffic.mennyiseg">
+        <label for="mennyisegname">Mennyiség</label>
+    </div>
+    <div class="form-floating mb-3 col-4">
+        <input type="text" class="form-control" id="egysegname" placeholder="" [(ngModel)]="newTraffic.egyseg">
+        <label for="egysegname">Egység</label>
+    </div>
+</div>
+
 <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="mennyisegname" placeholder="">
-    <label for="mennyisegname">Mennyiség</label>
+    <input type="text" class="form-control" id="nettoar" placeholder="" [(ngModel)]="newTraffic.nettoar">
+    <label for="nettoar">Nettó ár (/egység)</label>
 </div>
 <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="nettoar" placeholder="">
-    <label for="nettoar">Nettó ár</label>
-</div>
-<div class="form-floating mb-3">
-    <input type="text" class="form-control" id="osszesen" placeholder="">
-    <label for="osszesen">Összesen</label>
-</div>
-<div class="form-floating mb-3">
-    <input type="text" class="form-control" id="kiadva" placeholder="">
+    <input type="text" class="form-control" id="kiadva" placeholder="" [(ngModel)]="newTraffic.kiadva">
     <label for="kiadva">Kiadva</label>
 </div>
  
  
 <button type="button" class="btn btn-secondary mb-3 mx-3" routerLink="/traffic">Vissza</button>
  
-<button type="button" class="btn btn-primary mb-3" routerLink="/traffic">Mentés</button>
+<button type="button" class="btn btn-primary mb-3" (click)="save()" routerLink="/traffic">Mentés</button>

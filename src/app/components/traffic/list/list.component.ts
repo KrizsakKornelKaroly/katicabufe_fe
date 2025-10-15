@@ -18,7 +18,11 @@ export class TrafficListComponent {
 
   traffic: Traffic[] = [];
 
-   async ngOnInit() {
+  async ngOnInit() {
+    this.getAllTraffic();  
+  }
+
+  getAllTraffic() {
     this.api.selectAll('traffic').then((res: ApiResponse) => {
       if(res.status === 200 ) {
         this.traffic = res.data;
@@ -28,5 +32,7 @@ export class TrafficListComponent {
       }
     });
   }
+
+  
 
 }
