@@ -19,6 +19,10 @@ export const routes: Routes = [
         component: CategoryFormComponent
     },
     {
+        path: 'categoryform/:id',
+        component: CategoryFormComponent
+    },
+    {
         path: 'traffic',
         component: TrafficListComponent
     },

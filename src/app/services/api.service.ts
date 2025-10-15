@@ -71,7 +71,7 @@ export class ApiService {
 
   async update(table: string, id: number, data: any) {
     try {
-      const response = await axios.patch(`${this.SERVER}/${table}`, data);
+      const response = await axios.patch(`${this.SERVER}/${table}/${id}`, data);
       return {
         status: 200,
         message: "Rekord módosítva!",

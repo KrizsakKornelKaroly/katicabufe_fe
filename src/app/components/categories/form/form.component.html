@@ -1,12 +1,14 @@
 <h3>Kategória kezelés</h3>
 <hr>
-<h3>Új kategória felvétele</h3>
 
-<div class="form-floating mb-3">
-    <input type="text" class="form-control" id="catname" placeholder="">
+<h5 *ngIf="!this.id">Új kategória felvétele</h5>
+<h5 *ngIf="this.id">Kategória módosítása</h5>
+
+<div class="form-floating mb-3 mt-3">
+    <input type="text" class="form-control" id="catname" placeholder="" [(ngModel)]="newCategory.kategoriaNev">
     <label for="catname">Kategória név</label>
 </div>
 
 <button type="button" class="btn btn-primary mx-3" routerLink="/categories"> Vissza </button>
 
-<button type="button" class="btn btn-primary" routerLink="/categories"> Mentés </button>
+<button type="button" class="btn btn-primary" (click)="save()" routerLink="/categories"> Mentés </button>
