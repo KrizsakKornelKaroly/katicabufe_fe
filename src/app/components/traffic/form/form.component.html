@@ -19,7 +19,7 @@
  
 <div class="row">
     <div class="form-floating mb-3 col-8">
-        <input type="text" class="form-control" id="mennyisegname" placeholder="" [(ngModel)]="newTraffic.mennyiseg">
+        <input type="number" class="form-control" id="mennyisegname" placeholder="" [(ngModel)]="newTraffic.mennyiseg">
         <label for="mennyisegname">Mennyiség</label>
     </div>
     <div class="form-floating mb-3 col-4">
@@ -29,13 +29,15 @@
 </div>
 
 <div class="form-floating mb-3">
-    <input type="text" class="form-control" id="nettoar" placeholder="" [(ngModel)]="newTraffic.nettoar">
+    <input type="number" class="form-control" id="nettoar" placeholder="" [(ngModel)]="newTraffic.nettoar">
     <label for="nettoar">Nettó ár (/egység)</label>
 </div>
-<div class="form-floating mb-3">
-    <input type="text" class="form-control" id="kiadva" placeholder="" [(ngModel)]="newTraffic.kiadva">
-    <label for="kiadva">Kiadva</label>
+
+<div class="form-check mb-3">
+  <input class="form-check-input" type="checkbox" value="" id="kiadva" [(ngModel)]="newTraffic.kiadva">
+  <label class="form-check-label" for="kiadva">Kiadva</label>
 </div>
+
  
  
 <button type="button" class="btn btn-secondary mb-3 mx-3" routerLink="/traffic">Vissza</button>

@@ -58,7 +58,6 @@ export class CategoryFormComponent implements OnInit {
     }
     if(!this.id) {
       this.api.insert('categories', this.newCategory).then((res: ApiResponse) => {
-        console.log(res);
         if (res.status === 200) {
           alert(res.message);
           this.newCategory = {

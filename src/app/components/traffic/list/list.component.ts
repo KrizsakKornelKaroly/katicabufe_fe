@@ -33,6 +33,19 @@ export class TrafficListComponent {
     });
   }
 
+  delete(id: number) {
+    if (window.confirm('Biztosan törölni szeretnéd a forgalmi tételt?')) {
+      this.api.delete('traffic', id).then((res: ApiResponse) => {
+        if (res.status == 200) {
+          alert(res.message);
+          this.getAllTraffic();
+        }
+        else {
+          alert(res.message);
+        }
+      });
+    }
+  }
   
 
 }

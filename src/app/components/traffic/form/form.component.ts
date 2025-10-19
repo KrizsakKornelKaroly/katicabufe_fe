@@ -54,7 +54,7 @@ export class TrafficFormComponent implements OnInit {
   }
 
   save() {
-    if (this.newTraffic.termek == '' || this.newTraffic.vevo == '' || this.newTraffic.kategoriaNev == '' || this.newTraffic.egyseg == '' || this.newTraffic.nettoar <= 0 || this.newTraffic.mennyiseg <= 0 || this.newTraffic.kiadva == null) {
+    if (this.newTraffic.termek == '' || this.newTraffic.vevo == '' || this.newTraffic.kategoriaId <= 0 || this.newTraffic.egyseg == '' || this.newTraffic.nettoar <= 0 || this.newTraffic.mennyiseg <= 0) {
       alert('Minden mező kitöltése kötelező, a szám mezők csak pozitív értéket fogadhatnak el!');
       return;
     }
