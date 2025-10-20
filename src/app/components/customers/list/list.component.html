@@ -8,17 +8,29 @@
     <thead>
         <tr>
             <th>#</th>
-            <th></th>
-            <th></th>
-            <th></th>
+            <th>Név</th>
+            <td class="text-end">Műveletek</td>
         </tr>
     </thead>
     <tbody>
-    
+        <tr *ngFor="let customer of customers; index as i;">
+            <td>{{i+1}}</td>
+            <td>{{customer.name}}</td>
+            <td class="text-end">
+                <button class="btn btn-sm btn-warning me-2" routerLink="/customersform/{{customer.id}}">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                </button>
+                <button class="btn btn-sm btn-danger" (click)="delete(customer.id)">
+                    <i class="bi bi-x-circle-fill"></i>
+                </button>
+
+            </td>
+        </tr>
+
     </tbody>
     
     <tfoot>
-        <th colspan="4" class="text-center">Összesen: <span>0</span> rekord</th>
+        <th colspan="4" class="text-center">Összesen: <span>{{customers.length}}</span> rekord</th>
     </tfoot>
     
     </table>

@@ -83,7 +83,7 @@ export class TrafficFormComponent implements OnInit {
     }
     else {
       this.api.update('traffic', this.id, this.newTraffic).then((res: ApiResponse) => {
-        if (res.status === 200) {
+        if (res.status == 200) {
           alert(res.message);
           this.router.navigate(['/traffic']);
         }

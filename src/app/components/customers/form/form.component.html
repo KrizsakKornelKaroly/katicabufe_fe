@@ -1,9 +1,15 @@
 <h3>Vásárlók kezelése</h3>
 <hr>
-<h3>Új vásárló felvétele</h3>
+
+<h3 *ngIf="!this.id">Új vásárló felvétele</h3>
+<h3 *ngIf="this.id">Vásárló módosítása</h3>
 
 
+<div class="form-floating mb-3 mt-3">
+    <input type="text" class="form-control" id="userName" placeholder="" [(ngModel)]="newCustomer.name">
+    <label for="userName">Név</label>
+</div>
 
 <button type="button" class="btn btn-primary mx-3" routerLink="/customers"> Vissza </button>
 
-<button type="button" class="btn btn-primary" routerLink="/customers"> Mentés </button>
+<button type="button" class="btn btn-primary" (click)="save()" routerLink="/customers"> Mentés </button>
