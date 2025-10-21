@@ -27,7 +27,7 @@
                 <button class="btn btn-sm btn-warning me-2" routerLink="/productsform/{{product.id}}">
                     <i class="bi bi-exclamation-circle-fill"></i>
                 </button>
-                <button class="btn btn-sm btn-danger" >
+                <button class="btn btn-sm btn-danger" (click)="delete(product.id)">
                     <i class="bi bi-x-circle-fill"></i>
                 </button>
             </td>
@@ -35,7 +35,7 @@
     </tbody>
     
     <tfoot>
-        <th colspan="4" class="text-center">Összesen: <span>{{products.length}}</span> rekord</th>
+        <th colspan="6" class="text-center">Összesen: <span>{{products.length}}</span> rekord</th>
     </tfoot>
     
     </table>

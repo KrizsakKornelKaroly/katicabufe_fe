@@ -33,4 +33,18 @@ export class ProductsListComponent {
         }
       });
     }
+
+    delete(id: number) {
+      if(confirm('Biztosan törölni szeretnéd a terméket?')) {
+        this.api.delete('products', id).then((res: ApiResponse) => {
+          if(res.status == 200) {
+            alert(res.message);
+            this.getAllProducts();
+          }
+          else {
+            alert(res.message);
+          }
+        });
+      }
+    }
 }

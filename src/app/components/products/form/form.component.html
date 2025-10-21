@@ -3,18 +3,26 @@
 <h3>Új termék felvétele</h3>
 
 <div class="form-floating mb-3 mt-3">
-    <input type="text" class="form-control" id="termekname" placeholder="">
+    <input type="text" class="form-control" id="termekname" placeholder="" [(ngModel)]="newProduct.termek">
     <label for="termekname">Terméknév</label>
 </div>
 
 <div class="form-floating mb-3 mt-3">
-    <select id="disabledSelect" class="form-select">
-        <option></option>
+    <select id="categorySelect" class="form-select" [(ngModel)]="newProduct.kategoriaId">
+        <option value="{{category.id}}" *ngFor="let category of categories; index as i">{{category.kategoriaNev}}</option>
     </select>
 </div>
 
-<div></div>
+<div class="form-floating mb-3 mt-3">
+    <input type="number" class="form-control" id="price" placeholder="" [(ngModel)]="newProduct.ar">
+    <label for="price">Ár</label>
+</div>
+
+<div class="form-floating mb-3 mt-3">
+    <input type="text" class="form-control" id="price" placeholder="" [(ngModel)]="newProduct.egyseg">
+    <label for="price">Egység</label>
+</div>
 
 <button type="button" class="btn btn-primary mx-3" routerLink="/products"> Vissza </button>
 
-<button type="button" class="btn btn-primary" routerLink="/products"> Mentés </button>
+<button type="button" class="btn btn-primary" (click)="save()" routerLink="/products"> Mentés </button>
